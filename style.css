@@ -3,11 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  height: 100vh;
+  width: 100%;  
+  overflow-x: hidden;
+}
 section {
-  height: 100vh;  
-  background-color: #5372F0;
+  height: 100%;  
+  width: 100%;  
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 .score {  
@@ -16,6 +21,9 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 20;
 }
 .score h2 {
   font-size: 30px;
@@ -28,17 +36,26 @@ section {
 
 .intro {  
   color: #fff;
-  height: 50vh;
+  height: 100vh;
+  background-color: rgb(243, 84, 84);
+  display: grid;
+  place-items: center;
+  transition: all 1s ease;
+}
+.intro div{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  transition: opacity 0.5s ease;
+  justify-content: center;
+  gap: 30px;
+}
+h1 {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
 }
 
-.intro h1 {
-  font-size: 50px;
-}
+
 .intro button,
 .match button {
   width: 150px;
@@ -53,35 +70,60 @@ section {
 }
 
 .match {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.5s ease 0.5s;
-}
-.winner {  
   color: #fff;
-  text-align: center;
-  font-size: 50px;
+  height: 100vh;
+  width: 100%;  
+  display: grid;
+  place-items: center;
+  /* transition: opacity 0.5s ease; */
+  /* position: absolute;   */
+  transition: all 0.5s ease 0.5s;
+  background-color: #5372F0;
+}
+.match .content{
+  display: flex;
+  height: 50vh; 
+  flex-direction: column; 
+  width: fit-content;
+  gap: 20px; 
 }
 
 .hands,
 .options {
-  display: flex;
+  display: flex !important;
   justify-content: space-around;
   align-items: center;
+} 
+.options{
+  flex-direction: column;
+  gap: 20px;
 }
-
+.hands img{
+  width: 200px;
+}
 .player-hand {
   transform: rotateY(180deg);
-}
+} */
 .fadeIn {
   opacity: 1;
   pointer-events: all;
 }
 .fadeOut {
   opacity: 0;
+  display: none;
   pointer-events: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .intro h1 {
+    font-size: 50px;
+  }  
+  .options{
+    flex-direction: row !important;
+  }
+  .hands img{
+    width: 300px !important;
+  }
 }
 
 
@@ -144,3 +186,4 @@ section {
     transform: translateY(0px);
   }
 }
+
