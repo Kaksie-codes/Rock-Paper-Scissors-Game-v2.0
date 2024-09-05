@@ -103,7 +103,7 @@ h1 {
 }
 .player-hand {
   transform: rotateY(180deg);
-} */
+}
 .fadeIn {
   opacity: 1;
   pointer-events: all;
